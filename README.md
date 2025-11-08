@@ -1,16 +1,26 @@
 # sb_set_starship_colors.wezterm
 
-![set_starship_colors](images/set_starship_colors)
+![set_starship_colors](images/set_starship_colors.gif)
 
-The purpose of this plugin is to illustrate how the colors of features covered by Starship can be customize in WezTerm.
+The purpose of this plugin is to illustrate how the colors of features covered by [Starship](https://starship.rs/) can be customize from WezTerm.
 
-DO NOT DIRECTLY APPLY THIS PLUGIN WITHOUT FIRST CUSTOMISING THE CONTENTS OF `plugin/set_starship_colors.lua` as it can corrupt your `~/.config/starship.toml` file.
+DO NOT DIRECTLY APPLY THIS PLUGIN WITHOUT FIRST CUSTOMISING THE CONTENTS OF `plugin/set_starship_colors.lua` AS IT CAN CORRUPT YOUR `~/.config/starship.toml` FILE.
 
-NOTE:
-a. This plugin will only work after:
+**NOTE:**
+
+a. This plugin will only work in your WezTerm after:
    1. the [sb_show_system_color.wezterm](https://github.com/sunbearc22/sb_show_system_color.wezterm.git) plugin is used.
    2. `plugin/set_starship_colors.lua` is amended to suite the contents of your `~/.config/starship.toml` file.
+
 b. It does not have a `apply_to_config()` method as it is unrelated to WezTerm's `Config` struct.
+
+c. DO NOT run: `wezterm.plugin.require("https://github.com/sunbearc22/sb_set_starship_colors.wezterm.git")`.
+
+## Installation
+
+```
+git clone https://github.com/sunbearc22/sb_set_starship_colors.wezterm.git
+```
 
 ## Usage
 
@@ -24,7 +34,7 @@ if wezterm.config_builder then
 end
 
 -- Add these lines to use the plugin:
-local repo = "https://github.com/sunbearc22/sb_set_starship_colors.wezterm.git"
+local repo = "file:///path/of/this/cloned/repository"
 wezterm.plugin.require(repo)
 
 return config
